@@ -30,7 +30,7 @@
     "build-custom:esm:prod": "tsc -p tsconfig.esm.prod.json",
     "build-custom:cjs:prod": "tsc -p tsconfig.cjs.prod.json",
     "build-custom:types:prod": "tsc -p ../../../wildo-ai/framework/tsconfig.common.prod.json --project . --emitDeclarationOnly --outDir dist/types",
-    "clean-custom": "rimraf dist  && rm -f tsconfig.base.tsbuildinfo",
+    "clean-custom": "rm -rf dist tsconfig.base.tsbuildinfo",
     "dev-custom": "pnpm build-custom:esm:watch & pnpm build-custom:cjs:watch & pnpm build-custom:types:watch",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",

@@ -37,6 +37,7 @@
     "@wildo-ai/saas-backend-lib": "workspace:*",
     "@wildo-ai/saas-models": "workspace:*",
     "@wildo-ai/external-connectors": "workspace:*",
+    "@wildo-ai/external-connectors-models": "workspace:*",
     "express": "*"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "lodash": "*",
     "ufo": "*",
     "inversify": "*",
-    "zod": "4.1.13"
+    "zod": "4.1.13",
+    "express": "*"
   }
 }
