@@ -1,0 +1,62 @@
+{
+  "name": "@wildo-ai/custom-frontend-main-lib",
+  "version": "1.0.0",
+  "description": "Custom React main app components library for the example application",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build-custom": "pnpm clean-custom && pnpm build-custom:esm && pnpm build-custom:cjs && pnpm build-custom:types",
+    "build-custom:cjs": "tsc -p tsconfig.cjs.json",
+    "build-custom:cjs:watch": "tsc -p tsconfig.cjs.json --watch --preserveWatchOutput",
+    "build-custom:esm": "tsc -p tsconfig.esm.json",
+    "build-custom:esm:watch": "tsc -p tsconfig.esm.json --watch --preserveWatchOutput",
+    "build-custom:types": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types",
+    "build-custom:types:watch": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types --watch --preserveWatchOutput",
+    "clean-custom": "rm -rf dist tsconfig.base.tsbuildinfo",
+    "dev-custom": "pnpm build-custom:esm:watch & pnpm build-custom:cjs:watch & pnpm build-custom:types:watch",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@wildo-ai/custom-frontend-common-lib": "workspace:*",
+    "@wildo-ai/custom-shared-lib": "workspace:*",
+    "@wildo-ai/saas-frontend-lib": "workspace:*",
+    "@wildo-ai/saas-models": "workspace:*",
+    "@wildo-ai/presets-components-models": "workspace:*",
+    "@wildo-ai/presets-components": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "rimraf": "*",
+    "typescript": "*"
+  },
+  "peerDependencies": {
+    "@headlessui/react": "*",
+    "@heroicons/react": "*",
+    "@hookform/resolvers": "*",
+    "date-fns": "*",
+    "framer-motion": "*",
+    "lodash": "*",
+    "lottie-react": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-hook-form": "*",
+    "ufo": "*",
+    "eventemitter3": "*",
+    "zod": "4.1.13"
+  }
+}

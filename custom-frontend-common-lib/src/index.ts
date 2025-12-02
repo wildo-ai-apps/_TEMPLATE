@@ -1,0 +1,1 @@
+export { RegistryCustomComponentsCommon } from './frontend-components/custom-frontend-component-definitions';

@@ -1,0 +1,62 @@
+{
+  "name": "@wildo-ai/custom-shared-lib",
+  "version": "1.0.0",
+  "description": "Todo app specific models and types",
+  "license": "UNLICENSED",
+  "author": "Wildo AI",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build-custom": "pnpm clean-custom && pnpm build-custom:esm && pnpm build-custom:cjs && pnpm build-custom:types",
+    "build-custom:cjs": "tsc -p tsconfig.cjs.json",
+    "build-custom:cjs:watch": "tsc -p tsconfig.cjs.json --watch --preserveWatchOutput",
+    "build-custom:esm": "tsc -p tsconfig.esm.json",
+    "build-custom:esm:watch": "tsc -p tsconfig.esm.json --watch --preserveWatchOutput",
+    "build-custom:types": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types",
+    "build-custom:types:watch": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types --watch --preserveWatchOutput",
+    "build-custom:prod": "pnpm clean-custom && pnpm build-custom:esm:prod && pnpm build-custom:cjs:prod && pnpm build-custom:types:prod",
+    "build-custom:esm:prod": "tsc -p tsconfig.esm.prod.json",
+    "build-custom:cjs:prod": "tsc -p tsconfig.cjs.prod.json",
+    "build-custom:types:prod": "tsc -p ../../../wildo-ai/framework/tsconfig.common.prod.json --project . --emitDeclarationOnly --outDir dist/types",
+    "clean-custom": "rimraf dist  && rm -f tsconfig.base.tsbuildinfo",
+    "dev-custom": "pnpm build-custom:esm:watch & pnpm build-custom:cjs:watch & pnpm build-custom:types:watch",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@wildo-ai/saas-models": "workspace:*",
+    "@wildo-ai/presets-components-models": "workspace:*"
+  },
+  "peerDependencies": {
+    "date-fns": "*",
+    "inversify": "*",
+    "jsonwebtoken": "*",
+    "lodash": "*",
+    "mime": "*",
+    "reflect-metadata": "*",
+    "ufo": "*",
+    "uuid": "*",
+    "yaml": "*",
+    "zod": "4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "jest": "*",
+    "rimraf": "*",
+    "typescript": "*",
+    "zod": "4.1.13"
+  }
+}

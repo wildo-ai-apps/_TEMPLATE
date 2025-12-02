@@ -1,0 +1,28 @@
+# App-Custom Example Workspace Configuration
+# Production-ready structure with controlled application deployment
+
+packages:
+
+  # === CUSTOMIZABLE LIBRARIES (User Controlled) ===
+  # These libraries can be modified by end-users to implement custom business logic
+  # - 'app-custom-lifecycle-management-api'
+  
+  - 'custom-backend-lib'              # Node.js Backend Library
+  - 'custom-shared-lib'                   # TypeScript Models (Universal)
+  - 'custom-frontend-common-lib'      # React Common Components
+  - 'custom-frontend-admin-lib'       # React Admin Components
+  - 'custom-frontend-b2c-lib'         # React B2C Components
+  - 'custom-frontend-main-lib'        # React Main Components
+  - 'custom-technical-doc-lib'        # Docusaurus Components
+  - 'custom-website-lib'              # Astro Components
+
+  
+  # Core SaaS Framework Libraries (read-only access)
+  - '../../wildo-ai/framework/saas-app-lifecycle-lib'    # Application Lifecycle Management
+  - '../../wildo-ai/framework/saas-backend-lib'          # Core Backend Framework
+  - '../../wildo-ai/framework/saas-frontend-lib'         # Core Frontend Framework  
+  - '../../wildo-ai/framework/saas-models'               # Core Platform Models
+  - '../../wildo-ai/framework/presets-components-models' # Core Presets Components Models
+  - '../../wildo-ai/framework/presets-components' # Core Presets Components Frontend
+  - '../../wildo-ai/framework/external-connectors' # Core External Connectors
+  - '../../wildo-ai/framework/external-connectors-models' # Core External Connectors Models

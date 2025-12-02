@@ -1,0 +1,28 @@
+{
+  "name": "@wildo-ai/custom-apps",
+  "version": "1.0.0",
+  "description": "Custom applications workspace",
+  "private": true,
+  "workspaces": [
+    "custom-*"
+  ],
+  "scripts": {
+    "build": "pnpm build:shared && pnpm build:frontend && pnpm build:backend",
+    "build:shared": "pnpm --filter @wildo-ai/custom-shared-lib build-custom",
+    "build:frontend": "pnpm --filter '@wildo-ai/custom-frontend-*' build-custom",
+    "build:backend": "pnpm --filter @wildo-ai/custom-backend-lib build-custom",
+    "dev": "pnpm --filter '*' dev-custom",
+    "clean": "pnpm --filter '*' clean-custom"
+  },
+  "devDependencies": {
+    "typescript": "*"
+  },
+  "pnpm": {
+    "overrides": {
+      "inversify": "7.6.1",
+      "@inversifyjs/container": "1.12.1",
+      "reflect-metadata": "0.2.2",
+      "zod": "4.1.13"
+    }
+  }
+}

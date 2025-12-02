@@ -1,0 +1,47 @@
+{
+  "name": "@wildo-ai/custom-website-lib",
+  "version": "1.0.0",
+  "description": "Custom Astro components library for the marketing website",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build-custom": "pnpm clean-custom && pnpm build-custom:esm && pnpm build-custom:cjs && pnpm build-custom:types",
+    "build-custom:cjs": "tsc -p tsconfig.cjs.json",
+    "build-custom:cjs:watch": "tsc -p tsconfig.cjs.json --watch --preserveWatchOutput",
+    "build-custom:esm": "tsc -p tsconfig.esm.json",
+    "build-custom:esm:watch": "tsc -p tsconfig.esm.json --watch --preserveWatchOutput",
+    "build-custom:types": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types",
+    "build-custom:types:watch": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types --watch --preserveWatchOutput",
+    "clean-custom": "rm -rf dist tsconfig.base.tsbuildinfo",
+    "dev-custom": "pnpm build-custom:esm:watch & pnpm build-custom:cjs:watch & pnpm build-custom:types:watch",
+    "test": "jest --passWithNoTests",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@wildo-ai/custom-shared-lib": "workspace:*",
+    "@wildo-ai/saas-models": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "*",
+    "typescript": "*"
+  },
+  "peerDependencies": {
+    "date-fns": "*",
+    "lodash": "*",
+    "ufo": "*" ,
+    "zod": "4.1.13"
+  }
+}
