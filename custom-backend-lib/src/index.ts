@@ -12,3 +12,5 @@ export * from './core/inject/service-types';
 
 // Custom flows-actors
 export * from './flows-actors/flows-actors.default.definition.schemas';
+// Custom i18n labels
+export * from './core/i18n/labels/labels.en';
