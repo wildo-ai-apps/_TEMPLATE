@@ -38,9 +38,11 @@
   },
   "dependencies": {
     "@wildo-ai/saas-models": "workspace:*",
-    "@wildo-ai/presets-components-models": "workspace:*"
+    "@wildo-ai/presets-components-models": "workspace:*",
+    "@wildo-ai/zod-decorators": "workspace:*"
   },
   "peerDependencies": {
+    "big.js": "*",
     "date-fns": "*",
     "inversify": "*",
     "jsonwebtoken": "*",
@@ -50,13 +52,13 @@
     "ufo": "*",
     "uuid": "*",
     "yaml": "*",
-    "zod": "4.1.13"
+    "zod": "*"
   },
   "devDependencies": {
     "@types/node": "*",
     "jest": "*",
     "rimraf": "*",
     "typescript": "*",
-    "zod": "4.1.13"
+    "zod": "*"
   }
 }

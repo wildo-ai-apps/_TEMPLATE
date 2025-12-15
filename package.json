@@ -21,8 +21,7 @@
     "overrides": {
       "inversify": "7.6.1",
       "@inversifyjs/container": "1.12.1",
-      "reflect-metadata": "0.2.2",
-      "zod": "4.1.13"
+      "reflect-metadata": "0.2.2"
     }
   }
 }

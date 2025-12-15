@@ -32,13 +32,15 @@
   },
   "dependencies": {
     "@wildo-ai/custom-shared-lib": "workspace:*",
-    "@wildo-ai/saas-models": "workspace:*"
+    "@wildo-ai/saas-models": "workspace:*",
+    "@wildo-ai/zod-decorators": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "*",
     "typescript": "*"
   },
   "peerDependencies": {
+    "big.js": "*",
     "date-fns": "*",
     "lodash": "*",
     "ufo": "*"

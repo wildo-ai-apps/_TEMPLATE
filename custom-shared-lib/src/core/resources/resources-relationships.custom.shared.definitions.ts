@@ -1,6 +1,6 @@
 import { ResourceRelationship } from "@wildo-ai/saas-models";
 
-import { initZodDecorators } from '@wildo-ai/saas-models';
+import { initZodDecorators } from '@wildo-ai/zod-decorators';
 initZodDecorators();
 
 // Empty relationships array - add your custom resource relationships here

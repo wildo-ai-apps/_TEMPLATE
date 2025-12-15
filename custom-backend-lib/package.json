@@ -38,6 +38,7 @@
     "@wildo-ai/saas-models": "workspace:*",
     "@wildo-ai/external-connectors": "workspace:*",
     "@wildo-ai/external-connectors-models": "workspace:*",
+    "@wildo-ai/zod-decorators": "workspace:*",
     "express": "*"
   },
   "devDependencies": {
@@ -46,11 +47,12 @@
     "typescript": "*"
   },
   "peerDependencies": {
+    "big.js": "*",
     "date-fns": "*",
     "lodash": "*",
     "ufo": "*",
     "inversify": "*",
-    "zod": "4.1.13",
+    "zod": "*",
     "express": "*"
   }
 }

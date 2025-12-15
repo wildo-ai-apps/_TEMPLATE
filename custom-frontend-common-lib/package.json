@@ -35,7 +35,8 @@
     "@wildo-ai/saas-frontend-lib": "workspace:*",
     "@wildo-ai/saas-models": "workspace:*",
     "@wildo-ai/presets-components-models": "workspace:*",
-    "@wildo-ai/presets-components": "workspace:*"
+    "@wildo-ai/presets-components": "workspace:*",
+    "@wildo-ai/zod-decorators": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "*",
@@ -45,6 +46,7 @@
   },
   "peerDependencies": {
     "@headlessui/react": "*",
+    "big.js": "*",
     "@heroicons/react": "*",
     "@hookform/resolvers": "*",
     "date-fns": "*",
@@ -56,6 +58,6 @@
     "react-hook-form": "*",
     "ufo": "*",
     "eventemitter3": ">=5.0.1",
-    "zod": "4.1.13"
+    "zod": "*"
   }
 }

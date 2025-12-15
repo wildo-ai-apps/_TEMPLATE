@@ -1,5 +1,5 @@
 // Initialize Zod decorators early (lazy init will also happen on first use)
-import { initZodDecorators } from '@wildo-ai/saas-models';
+import { initZodDecorators } from '@wildo-ai/zod-decorators';
 initZodDecorators();
 
 export * from './core/resources/resources-types.custom.backend.schemas';

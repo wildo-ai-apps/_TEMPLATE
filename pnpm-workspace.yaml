@@ -18,6 +18,7 @@ packages:
 
   
   # Core SaaS Framework Libraries (read-only access)
+  - '../../wildo-ai/framework/zod-decorators'            # Zod Decorators
   - '../../wildo-ai/framework/saas-app-lifecycle-lib'    # Application Lifecycle Management
   - '../../wildo-ai/framework/saas-backend-lib'          # Core Backend Framework
   - '../../wildo-ai/framework/saas-frontend-lib'         # Core Frontend Framework  

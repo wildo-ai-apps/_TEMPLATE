@@ -1,4 +1,4 @@
-import { initZodDecorators } from '@wildo-ai/saas-models';
+import { initZodDecorators } from '@wildo-ai/zod-decorators';
 initZodDecorators();
 
 import { ResourceConfiguration_InitializationFactoryMap } from '@wildo-ai/saas-models';
