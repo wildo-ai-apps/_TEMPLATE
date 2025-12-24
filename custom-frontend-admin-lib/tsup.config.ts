@@ -1,6 +1,11 @@
 import { defineConfig } from 'tsup'
+import { enhanceConfigsWithMinimalOutput } from '../../scripts/tsup-output-formatter.ts'
+import { fileURLToPath } from 'url'
 
-export default defineConfig([
+const configPath = fileURLToPath(import.meta.url)
+
+export default defineConfig(
+  enhanceConfigsWithMinimalOutput(configPath, [
   {
     entry: ['src/index.ts'],
     format: ['esm'],
@@ -46,5 +51,6 @@ export default defineConfig([
       '@wildo-ai/zod-decorators',
     ],
   },
-])
+  ])
+)
 

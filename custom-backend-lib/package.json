@@ -37,6 +37,7 @@
     "express": "*"
   },
   "devDependencies": {
+    "@swc/core": "^1",
     "@types/node": "*",
     "rimraf": "*",
     "tsup": "*",

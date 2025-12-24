@@ -33,6 +33,7 @@
     "@wildo-ai/zod-decorators": "workspace:*"
   },
   "devDependencies": {
+    "@swc/core": "^1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "rimraf": "*",

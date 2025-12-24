@@ -46,6 +46,7 @@
     "zod": "*"
   },
   "devDependencies": {
+    "@swc/core": "^1",
     "@types/node": "*",
     "jest": "*",
     "rimraf": "*",

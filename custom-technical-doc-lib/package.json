@@ -31,6 +31,7 @@
     "@wildo-ai/zod-decorators": "workspace:*"
   },
   "devDependencies": {
+    "@swc/core": "^1",
     "rimraf": "*",
     "tsup": "*",
     "typescript": "*"
