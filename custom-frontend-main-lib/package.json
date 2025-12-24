@@ -5,27 +5,22 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./dist/esm/index.d.ts",
       "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/cjs/index.js"
     }
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/esm/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build-custom": "pnpm clean-custom && pnpm build-custom:esm && pnpm build-custom:cjs && pnpm build-custom:types",
-    "build-custom:cjs": "tsc -p tsconfig.cjs.json",
-    "build-custom:cjs:watch": "tsc -p tsconfig.cjs.json --watch --preserveWatchOutput",
-    "build-custom:esm": "tsc -p tsconfig.esm.json",
-    "build-custom:esm:watch": "tsc -p tsconfig.esm.json --watch --preserveWatchOutput",
-    "build-custom:types": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types",
-    "build-custom:types:watch": "tsc -p tsconfig.base.json --emitDeclarationOnly --outDir dist/types --watch --preserveWatchOutput",
-    "clean-custom": "rm -rf dist tsconfig.base.tsbuildinfo",
-    "dev-custom": "pnpm build-custom:esm:watch & pnpm build-custom:cjs:watch & pnpm build-custom:types:watch",
+    "build-custom": "pnpm clean-custom && tsup",
+    "clean-custom": "rimraf dist",
+    "dev-custom": "tsup --watch --watch ../custom-frontend-common-lib/dist --watch ../custom-shared-lib/dist",
+    "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
@@ -43,6 +38,7 @@
     "@types/react": "*",
     "@types/react-dom": "*",
     "rimraf": "*",
+    "tsup": "*",
     "typescript": "*"
   },
   "peerDependencies": {
