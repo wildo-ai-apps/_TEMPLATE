@@ -21,7 +21,7 @@
   "scripts": {
     "build-custom": "pnpm clean-custom && tsup",
     "clean-custom": "rimraf dist",
-    "dev-custom": "tsup --watch --watch ../../../wildo-ai/framework/saas-models/dist --watch ../../../wildo-ai/framework/presets-components-models/dist --watch ../../../wildo-ai/framework/zod-decorators/dist",
+    "dev-custom": "tsup --watch src --watch ../../../wildo-ai/framework/saas-models/dist",
     "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",

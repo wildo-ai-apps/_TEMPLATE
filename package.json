@@ -15,6 +15,8 @@
     "clean": "pnpm --filter '*' clean-custom"
   },
   "devDependencies": {
+    "chokidar": "^3.5.3",
+    "oxc-transform": "*",
     "typescript": "*"
   },
   "pnpm": {

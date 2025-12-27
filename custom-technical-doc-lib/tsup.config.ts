@@ -9,7 +9,7 @@ export default defineConfig(
   {
     entry: ['src/index.ts'],
     format: ['esm'],
-    dts: true,
+    dts: false, // DTS generation via build:types script (OXC)
     tsconfig: 'tsconfig.tsup.json',
     clean: false,
     sourcemap: true,

@@ -12,6 +12,7 @@
     "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
+    "isolatedDeclarations": true,
     "sourceMap": true,
     "noEmit": false,
     "rootDir": "src",

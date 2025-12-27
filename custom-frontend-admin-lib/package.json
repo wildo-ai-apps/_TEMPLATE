@@ -17,9 +17,11 @@
     "dist/"
   ],
   "scripts": {
-    "build-custom": "pnpm clean-custom && tsup",
+    "build-custom": "pnpm clean-custom && pnpm build:js && pnpm build:types",
+    "build:js": "tsup",
+    "build:types": "node ../scripts/generate-dts.mjs custom-frontend-admin-lib",
     "clean-custom": "rimraf dist",
-    "dev-custom": "tsup --watch --watch ../../../wildo-ai/framework/saas-frontend-lib/dist",
+    "dev-custom": "concurrently -n js,types -c cyan,yellow \"tsup --watch src --watch ../../../wildo-ai/framework/saas-frontend-lib/dist\" \"node ../scripts/generate-dts.mjs custom-frontend-admin-lib --watch\"",
     "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",
@@ -36,6 +38,9 @@
     "@swc/core": "^1",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "chokidar": "^3.5.3",
+    "concurrently": "*",
+    "oxc-transform": "*",
     "rimraf": "*",
     "tsup": "*",
     "typescript": "*"
