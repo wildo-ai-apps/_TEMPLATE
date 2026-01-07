@@ -6,11 +6,10 @@
   "exports": {
     ".": {
       "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/esm/index.js"
     }
   },
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/esm/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "files": [
@@ -19,13 +18,18 @@
   "scripts": {
     "build-custom": "pnpm clean-custom && pnpm build:js && pnpm build:types",
     "build:js": "tsup",
-    "build:types": "node ../scripts/generate-dts.mjs custom-frontend-main-lib",
+    "build:types": "NODE_OPTIONS='--max-old-space-size=24576' tsc --project tsconfig.dts.json --emitDeclarationOnly",
     "clean-custom": "rimraf dist",
-    "dev-custom": "concurrently -n js,types -c cyan,yellow \"tsup --watch src --watch ../custom-frontend-common-lib/dist\" \"node ../scripts/generate-dts.mjs custom-frontend-main-lib --watch\"",
+    "dev-custom": "concurrently -n js,types -c cyan,yellow \"tsup --watch src --watch ../custom-frontend-common-lib/dist\" \"pnpm dev:types:tsup\"",
     "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "build:types:oxc": "node ../scripts/generate-dts.mjs custom-frontend-main-lib",
+    "build:types:tsup": "NODE_OPTIONS='--max-old-space-size=24576' tsc --project tsconfig.dts.json --emitDeclarationOnly",
+    "dev:types": "NODE_OPTIONS='--max-old-space-size=24576' tsc --project tsconfig.dts.json --emitDeclarationOnly --watch --preserveWatchOutput",
+    "dev:types:oxc": "node ../scripts/generate-dts.mjs custom-frontend-main-lib --watch",
+    "dev:types:tsup": "NODE_OPTIONS='--max-old-space-size=24576' tsc --project tsconfig.dts.json --emitDeclarationOnly --watch --preserveWatchOutput"
   },
   "dependencies": {
     "@wildo-ai/custom-frontend-common-lib": "workspace:*",

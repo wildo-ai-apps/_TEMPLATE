@@ -1,62 +1,45 @@
 import { defineConfig } from 'tsup'
-import { enhanceConfigsWithMinimalOutput } from '../../scripts/tsup-output-formatter.ts'
+import { enhanceConfigsWithMinimalOutput } from '../scripts/tsup-output-formatter.ts'
 import { fileURLToPath } from 'url'
 
 const configPath = fileURLToPath(import.meta.url)
 
 export default defineConfig(
   enhanceConfigsWithMinimalOutput(configPath, [
-    {
-      entry: ['src/index.ts'],
-      format: ['esm'],
-      dts: false, // DTS generation via build:types script (OXC)
-      tsconfig: 'tsconfig.tsup.json',
-      clean: false,
-      sourcemap: true,
-      splitting: false,
-      treeshake: true,
-      target: 'es2022',
-      outDir: 'dist/esm',
-      external: [
-        'react',
-        'react-dom',
-        'zod',
-        'react-hook-form',
-        '@wildo-ai/custom-frontend-common-lib',
-        '@wildo-ai/custom-shared-lib',
-        '@wildo-ai/saas-frontend-lib',
-        '@wildo-ai/saas-models',
-        '@wildo-ai/presets-components-models',
-        '@wildo-ai/presets-components',
-        '@wildo-ai/zod-decorators',
-      ],
-    },
-    {
-      entry: ['src/index.ts'],
-      format: ['cjs'],
-      dts: false,
-      tsconfig: 'tsconfig.tsup.json',
-      clean: false,
-      sourcemap: true,
-      splitting: false,
-      treeshake: true,
-      target: 'es2022',
-      outDir: 'dist/cjs',
-      outExtension: () => ({ js: '.js' }),
-      external: [
-        'react',
-        'react-dom',
-        'zod',
-        'react-hook-form',
-        '@wildo-ai/custom-frontend-common-lib',
-        '@wildo-ai/custom-shared-lib',
-        '@wildo-ai/saas-frontend-lib',
-        '@wildo-ai/saas-models',
-        '@wildo-ai/presets-components-models',
-        '@wildo-ai/presets-components',
-        '@wildo-ai/zod-decorators',
-      ],
-    },
+  {
+    entry: ['src/index.ts'],
+    format: ['esm'],
+    dts: false, // DTS generation via build:types script (OXC)
+    tsconfig: 'tsconfig.tsup.json',
+    clean: false,
+    sourcemap: true,
+    splitting: false,
+    treeshake: true,
+    target: 'es2022',
+    outDir: 'dist/esm',
+    external: [
+      '@headlessui/react',
+      '@heroicons/react',
+      '@hookform/resolvers',
+      '@wildo-ai/custom-frontend-common-lib',
+      '@wildo-ai/custom-shared-lib',
+      '@wildo-ai/presets-components',
+      '@wildo-ai/presets-components-models',
+      '@wildo-ai/saas-frontend-lib',
+      '@wildo-ai/saas-models',
+      '@wildo-ai/zod-decorators',
+      'big.js',
+      'date-fns',
+      'eventemitter3',
+      'framer-motion',
+      'lodash',
+      'lottie-react',
+      'react',
+      'react-dom',
+      'react-hook-form',
+      'ufo',
+      'zod',
+    ],
+  },
   ])
 )
-

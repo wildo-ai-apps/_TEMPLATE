@@ -267,7 +267,7 @@ async function watchMode() {
     const duration = Math.round(performance.now() - startTime);
     if (!VERBOSE && success) {
       const changeText = changeCount > 1 ? ` (change #${changeCount})` : '';
-      console.log(`${LIBRARY_NAME}: DTS ⚡️ Build success in ${duration}ms${changeText}`);
+      console.log(`DTS: Build success in ${duration}ms${changeText}`);
     }
   });
   
@@ -281,7 +281,7 @@ async function watchMode() {
     const duration = Math.round(performance.now() - startTime);
     if (!VERBOSE && success) {
       const changeText = changeCount > 1 ? ` (change #${changeCount})` : '';
-      console.log(`${LIBRARY_NAME}: DTS ⚡️ Build success in ${duration}ms${changeText}`);
+      console.log(`DTS: Build success in ${duration}ms${changeText}`);
     }
   });
   
