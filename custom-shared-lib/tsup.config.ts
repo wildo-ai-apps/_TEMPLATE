@@ -1,6 +1,6 @@
 import { defineConfig } from 'tsup'
 import { enhanceConfigsWithMinimalOutput } from '../scripts/tsup-output-formatter.ts'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 
 const configPath = fileURLToPath(import.meta.url)
 
