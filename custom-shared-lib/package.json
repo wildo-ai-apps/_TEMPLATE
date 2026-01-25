@@ -20,7 +20,7 @@
   "scripts": {
     "build-custom": "pnpm clean-custom && tsup",
     "clean-custom": "rimraf dist",
-    "dev-custom": "tsup --watch src --watch ../../../wildo-ai/framework/saas-models/dist",
+    "dev-custom": "tsup --watch src --watch ../../../wildo-ai/framework/saas-models/dist/esm/.build-complete.js.trigger",
     "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage",
