@@ -38,6 +38,10 @@ export default defineConfig(
       'ufo',
       'zod',
     ],
+    esbuildOptions(options) {
+      // Ensure JSX uses the imported React correctly
+      options.jsx = 'automatic'
+    },
   },
   ])
 )
