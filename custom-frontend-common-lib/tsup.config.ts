@@ -30,7 +30,7 @@ export default defineConfig(
       'big.js',
       'date-fns',
       'eventemitter3',
-      'framer-motion',
+      'motion',
       'lodash',
       'lottie-react',
       'react',

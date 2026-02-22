@@ -57,7 +57,7 @@
     "@heroicons/react": "*",
     "@hookform/resolvers": "*",
     "date-fns": "*",
-    "framer-motion": "*",
+    "motion": "*",
     "lodash": "*",
     "lottie-react": "*",
     "react": "*",
